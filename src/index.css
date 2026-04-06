@@ -50,7 +50,7 @@ body {
 
 body::before {
   content: "ПОТЕРЕБИ\AКАБАЧОК";
-  white-space: pre;
+  white-space: pre-wrap;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -58,10 +58,10 @@ body::before {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
   font-size: clamp(140px, 25vw, 300px);
-  color: rgba(255, 255, 255, 0.25);
-  text-align: center;
-  line-height: 0.85;
+  max-width: 90vw;
+  line-height: 1;
   letter-spacing: -0.02em;
+  text-align: center;
   z-index: 0;
   pointer-events: none;
 }
