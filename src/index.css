@@ -50,20 +50,22 @@ body {
 
 body::before {
   content: "ПОТЕРЕБИ\AКАБАЧОК";
-  white-space: pre-wrap;
+  white-space: pre;           /* сохраняем перенос по \A */
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
-  font-size: clamp(140px, 25vw, 300px);
-  max-width: 90vw;
-  line-height: 1;
+  font-size: clamp(140px, 20vw, 300px); /* масштабируем относительно ширины экрана */
+  line-height: 1;              /* убрали сжатие */
   letter-spacing: -0.02em;
   text-align: center;
   z-index: 0;
   pointer-events: none;
+  color: rgba(255, 255, 255, 0.25); /* белый с прозрачностью 25% */
+  max-width: 90vw;              /* чтобы текст не выходил за края */
+  overflow-wrap: break-word;    /* перенос слов, если нужно */
 }
 
 canvas {
