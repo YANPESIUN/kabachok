@@ -48,8 +48,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-body::before {
-  content: "ПОТЕРЕБИ\nКАБАЧОК"; /* перенос строки с помощью \n */
+.background-text {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -57,23 +56,19 @@ body::before {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
   text-align: center;
+  color: rgba(255, 255, 255, 0.25);
   line-height: 1;
   letter-spacing: -0.02em;
   z-index: 0;
   pointer-events: none;
 
-  /* Цвет и прозрачность */
-  color: rgba(255, 255, 255, 0.25);
+  /* масштабируемый размер текста */
+  font-size: calc(8vw + 8vh);
 
-  /* Масштабируем текст так, чтобы он полностью помещался в экран */
-  font-size: calc(5vw + 5vh); /* динамическая подстройка под ширину и высоту */
-
-  /* Не даём тексту вылезать за экран */
+  /* Ограничение по экрану */
   max-width: 90vw;
   max-height: 90vh;
-
-  /* Перенос строк */
-  white-space: pre-wrap;
+  overflow-wrap: break-word;
   word-break: break-word;
 }
 canvas {
