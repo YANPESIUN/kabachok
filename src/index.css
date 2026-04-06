@@ -49,25 +49,33 @@ body {
 }
 
 body::before {
-  content: "ПОТЕРЕБИ\AКАБАЧОК";
-  white-space: pre;           /* сохраняем перенос по \A */
+  content: "ПОТЕРЕБИ\nКАБАЧОК"; /* перенос строки с помощью \n */
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
-  font-size: clamp(140px, 20vw, 300px); /* масштабируем относительно ширины экрана */
-  line-height: 1;              /* убрали сжатие */
-  letter-spacing: -0.02em;
   text-align: center;
+  line-height: 1;
+  letter-spacing: -0.02em;
   z-index: 0;
   pointer-events: none;
-  color: rgba(255, 255, 255, 0.25); /* белый с прозрачностью 25% */
-  max-width: 90vw;              /* чтобы текст не выходил за края */
-  overflow-wrap: break-word;    /* перенос слов, если нужно */
-}
 
+  /* Цвет и прозрачность */
+  color: rgba(255, 255, 255, 0.25);
+
+  /* Масштабируем текст так, чтобы он полностью помещался в экран */
+  font-size: calc(5vw + 5vh); /* динамическая подстройка под ширину и высоту */
+
+  /* Не даём тексту вылезать за экран */
+  max-width: 90vw;
+  max-height: 90vh;
+
+  /* Перенос строк */
+  white-space: pre-wrap;
+  word-break: break-word;
+}
 canvas {
   position: fixed !important;
   top: 0;
