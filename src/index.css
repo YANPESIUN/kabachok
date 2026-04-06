@@ -9,4 +9,66 @@
 
 body {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a4d2e 0%, #4a7c59 50%, #7fb069 100%);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+canvas {
+  display: block;
+}
+
+.info {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 14px;
+  opacity: 0.8;
+  pointer-events: none;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+body {
+  margin: 0;
+  overflow: hidden;
+  /* Центр светлый, края тёмные */
+  background: radial-gradient(circle at center, #7daf68 0%, #1b4e2d 100%);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body::before {
+  content: "ПОТЕРЕБИ\AКАБАЧОК";
+  white-space: pre;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: clamp(140px, 25vw, 300px);
+  color: rgba(255, 255, 255, 0.25);
+  text-align: center;
+  line-height: 0.85;
+  letter-spacing: -0.02em;
+  z-index: 0;
+  pointer-events: none;
+}
+
+canvas {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  z-index: 1 !important;
 }
