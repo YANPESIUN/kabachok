@@ -48,29 +48,27 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-.background-text {
+body::before {
+  content: "ПОТЕРЕБИ КАБАЧОК";
+  white-space: pre-wrap;           /* перенос слов по необходимости */
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
+  font-size: clamp(60px, 8vw, 200px); /* масштаб под ширину экрана */
+  line-height: 1.1;               /* немного увеличенный для читаемости */
+  letter-spacing: -0.015em;
   text-align: center;
-  color: rgba(255, 255, 255, 0.25);
-  line-height: 1;
-  letter-spacing: -0.02em;
   z-index: 0;
   pointer-events: none;
-
-  /* масштабируемый размер текста */
-  font-size: calc(8vw + 8vh);
-
-  /* Ограничение по экрану */
-  max-width: 90vw;
-  max-height: 90vh;
-  overflow-wrap: break-word;
-  word-break: break-word;
+  color: rgba(255, 255, 255, 0.25); /* белый с прозрачностью 25% */
+  max-width: 90vw;                 /* чтобы текст не выходил за края */
+  max-height: 80vh;                /* чтобы текст не выходил за верх/низ */
+  overflow-wrap: break-word;       /* перенос слов, если нужно */
 }
+
 canvas {
   position: fixed !important;
   top: 0;
