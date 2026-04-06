@@ -9,7 +9,7 @@ export default function Experience() {
   const { viewport } = useThree()
   const [loaded, setLoaded] = useState(false)
   
-  const { scene } = useGLTF('/models/zucchini.glb')
+  const { scene } = useGLTF(import.meta.env.BASE_URL + 'models/zucchini.glb')
   
   const rootBone = useRef(null)
   const wiggleBones = useRef([])
